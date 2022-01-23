@@ -11,14 +11,10 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  List<String> cardName = [];
   final taskName = TextEditingController();
-
-  List<TodoContainer> showContainerList = [];
-  addContainer() {
-    showContainerList.add(TodoContainer(
-      cardTitle: taskName.text,
-    ));
-  }
+  int counter = 0;
+  late String cardTitle;
 
   showModalSheet() {
     showModalBottomSheet(
@@ -40,7 +36,9 @@ class _MainScreenState extends State<MainScreen> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      addContainer();
+                      cardName.add(taskName.text.toString());
+                      counter++;
+                      taskName.clear();
                       Navigator.pop(context);
                     },
                     child: const Text(
@@ -119,26 +117,25 @@ class _MainScreenState extends State<MainScreen> {
               Container(
                 margin: const EdgeInsets.only(left: 15, top: 20),
                 child: const Text(
-                  'TODO',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  'ToDo Lists',
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
               ),
             ],
           ),
           const SizedBox(
-            height: 10,
+            height: 5,
           ),
-          ListView.builder(
-              itemCount: showContainerList.length,
-              itemBuilder: (context, index) {
-                return Container(
-                  height: 200,
-                  child: const TodoContainer(),
-                );
-              })
-          // ListView(
-          //   children: showContainerList,
-          // )
+          Expanded(
+            child: ListView.builder(
+                itemCount: counter,
+                itemBuilder: (BuildContext context, index) {
+                  return TodoContainer(
+                    onPressed: () {},
+                    cardTitle: cardName[index],
+                  );
+                }),
+          )
         ],
       ),
     );
