@@ -1,16 +1,5 @@
 # todo_app
 
-A new Flutter project.
+A simple todo app to manage all the list of yout ToDos, copy and enjoy
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot_1642971566](https://user-images.githubusercontent.com/79772304/150697981-a080220c-21ee-4b24-b10c-8b3371c8991d.png)
